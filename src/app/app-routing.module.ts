@@ -5,7 +5,6 @@ import { fromEventPattern } from 'rxjs';
 import { AppComponent } from './app.component';
 import { FormularioPersonasComponent } from './formulario-personas/formulario-personas.component';
 import { ListadoComponent } from './listado/listado.component';
-import { PersonaEditarComponent } from './persona-editar/persona-editar.component';
 import { PersonaTarjetaComponent } from './persona-tarjeta/persona-tarjeta.component';
 
 
