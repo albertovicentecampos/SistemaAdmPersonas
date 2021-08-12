@@ -7,8 +7,7 @@
     </mat-card-subtitle>
 
     <mat-card-actions>
-        <button [routerLink]="['/editar', persona.id_persona]"> EDITAR </button>
-        <!-- <app-formulario-personas [personaEditar]="persona"></app-formulario-personas> -->
+        <button (click)="editar()">EDITAR</button>
         <button>ELIMINAR</button>
     </mat-card-actions>
 </mat-card>

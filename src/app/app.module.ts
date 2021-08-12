@@ -9,6 +9,8 @@ import { PersonaTarjetaComponent } from './persona-tarjeta/persona-tarjeta.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
+import { ListadoComponent } from './listado/listado.component';
+import { PersonaEditarComponent } from './persona-editar/persona-editar.component';
 
 const material = [
   MatCardModule
@@ -18,7 +20,9 @@ const material = [
   declarations: [
     AppComponent,
     FormularioPersonasComponent,
-    PersonaTarjetaComponent
+    PersonaTarjetaComponent,
+    ListadoComponent,
+    PersonaEditarComponent
   ],
   imports: [
     BrowserModule,

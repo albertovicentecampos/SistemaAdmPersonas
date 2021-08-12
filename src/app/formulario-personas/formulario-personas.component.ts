@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-personas',
@@ -11,10 +12,11 @@ export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
   
-  constructor(private formBuilder: FormBuilder) { }
-
+  title = "EDICION PERSONAS"
+  id = -1
+  
   registerForm = this.formBuilder.group({
-    usuario: [this.personaEditar.user],
+    usuario: [''],
     password: [''],
     apellidos: [''],
     emailempresa: [''],
@@ -26,11 +28,25 @@ export class FormularioPersonasComponent implements OnInit {
     fechafin: [new Date()]
   })
 
+
+  constructor(private formBuilder: FormBuilder, private router: ActivatedRoute) { }
+
   ngOnInit(): void {
+      this.router.params.subscribe(
+        params => {
+          this.id = params['id']
+          console.log(this.id)
+        }
+      )
   }
 
   submit(){
+    
     console.log(this.registerForm.value)
+    console.log()
   }
+
+
+
 
 }
