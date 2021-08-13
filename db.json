@@ -1,8 +1,7 @@
 {
   "personas": [
     {
-      "id": 33,
-      "user": "Alberto",
+      "user": "Albertoooo",
       "password": "1234",
       "surname": "Vicente Campos",
       "email_empresa": "alberto@bosonit.com",
@@ -11,11 +10,11 @@
       "actividad": false,
       "fecha": "2020-03-03T00:00:00.000+00:00",
       "imagen_url": "",
-      "termination_date": "2020-04-04T00:00:00.000+00:00"
+      "termination_date": "2020-04-04T00:00:00.000+00:00",
+      "id": 33
     },
     {
-      "id": 65,
-      "user": "Luciaa",
+      "user": "Lucia",
       "password": "1234",
       "surname": "Vicente Campos",
       "email_empresa": "alberto@bosonit.com",
@@ -24,7 +23,8 @@
       "actividad": false,
       "fecha": "2020-03-03T00:00:00.000+00:00",
       "imagen_url": "",
-      "termination_date": "2020-04-04T00:00:00.000+00:00"
+      "termination_date": "2020-04-04T00:00:00.000+00:00",
+      "id": 65
     },
     {
       "id": 226,
@@ -40,8 +40,7 @@
       "termination_date": "2021-08-14T00:00:00.000+00:00"
     },
     {
-      "id": 290,
-      "user": "teresi",
+      "user": "Teresa",
       "password": "123455",
       "surname": "Vicente Campos",
       "email_empresa": "teresa@bosonit.com",
@@ -50,7 +49,8 @@
       "actividad": false,
       "fecha": "2021-08-20T00:00:00.000+00:00",
       "imagen_url": "",
-      "termination_date": "2021-08-20T00:00:00.000+00:00"
+      "termination_date": "2021-08-20T00:00:00.000+00:00",
+      "id": 290
     },
     {
       "id": 291,

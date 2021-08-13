@@ -1,7 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 
 @Component({
@@ -12,12 +12,12 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
-  
+
   title = "EDICION PERSONAS"
   id = -1
 
   persona: Persona = inicializar();
-  
+
   registerForm = this.formBuilder.group({
     user: [''],
     password: [''],
@@ -32,27 +32,44 @@ export class FormularioPersonasComponent implements OnInit {
   })
 
 
-  constructor(private formBuilder: FormBuilder, private router: ActivatedRoute, private personaServicio: PersonaServicioService) { }
+  constructor(private formBuilder: FormBuilder, private router: ActivatedRoute, private personaServicio: PersonaServicioService, private route: Router) { }
 
   ngOnInit(): void {
-      this.router.params.subscribe(
-        params => {
-          this.id = params['id']
-          console.log(this.id)
-        }
-      )
+    this.router.params.subscribe(
+      params => {
+        this.id = params['id']
+        console.log(this.id)
+      }
+    )
 
-      this.personaServicio.getPersona(this.id).subscribe(
-        usuario => {
-          this.persona = usuario;
-          this.registerForm.patchValue(this.persona);
-        }
-      )
+    this.personaServicio.getPersona(this.id).subscribe(
+      usuario => {
+        this.persona = usuario;
+        this.registerForm.patchValue(this.persona);
+      }
+    )
+    
   }
 
-  submit(){
-    console.log(this.registerForm.value)
-    console.log()
+  submit() {
+    if (this.id === -1) {
+      this.crearPersona();
+    } else {
+      this.editarPersona();
+    }
+    this.route.navigate(['/inicio']);
+  }
+
+  crearPersona() {
+    this.persona = this.registerForm.value;
+    this.personaServicio.add(this.persona).subscribe();
+
+  }
+  
+  editarPersona() {
+    this.persona = this.registerForm.value;
+    this.persona.id = this.id;
+    this.personaServicio.update(this.persona).subscribe();
   }
 
 
