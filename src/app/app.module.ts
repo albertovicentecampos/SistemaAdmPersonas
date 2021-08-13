@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ListadoComponent } from './listado/listado.component';
 import { NavegacionComponent } from './navegacion/navegacion.component';
 
+
 const material = [
   MatCardModule
 ]

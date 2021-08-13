@@ -8,7 +8,7 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 @Component({
   selector: 'app-persona-tarjeta',
   templateUrl: './persona-tarjeta.component.html',
-  styleUrls: ['./persona-tarjeta.component.css']
+  styleUrls: ['./persona-tarjeta.component.scss']
 })
 export class PersonaTarjetaComponent implements OnInit {
 

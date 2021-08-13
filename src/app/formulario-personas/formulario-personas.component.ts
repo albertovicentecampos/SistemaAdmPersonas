@@ -7,7 +7,7 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 @Component({
   selector: 'app-formulario-personas',
   templateUrl: './formulario-personas.component.html',
-  styleUrls: ['./formulario-personas.component.css']
+  styleUrls: ['./formulario-personas.component.scss']
 })
 export class FormularioPersonasComponent implements OnInit {
 

@@ -1,6 +1,4 @@
 <h1>{{title}}</h1>
-
-
 <div *ngFor="let p of personas">
   <app-persona-tarjeta (borrar)="recibirEliminar($event)" [persona]="p" > </app-persona-tarjeta>
 </div>

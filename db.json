@@ -40,19 +40,6 @@
       "termination_date": "2021-08-14T00:00:00.000+00:00"
     },
     {
-      "user": "Teresa",
-      "password": "123455",
-      "surname": "Vicente Campos",
-      "email_empresa": "teresa@bosonit.com",
-      "email_personal": "teresa@bosonit.com",
-      "ciudad": "jaen",
-      "actividad": false,
-      "fecha": "2021-08-20T00:00:00.000+00:00",
-      "imagen_url": "",
-      "termination_date": "2021-08-20T00:00:00.000+00:00",
-      "id": 290
-    },
-    {
       "id": 291,
       "user": "Albertito",
       "password": "1234",
@@ -64,32 +51,6 @@
       "fecha": "2021-08-13T00:00:00.000+00:00",
       "imagen_url": "",
       "termination_date": "2021-08-12T00:00:00.000+00:00"
-    },
-    {
-      "id": 292,
-      "user": "Albertop",
-      "password": "1234",
-      "surname": "Vicente Campos",
-      "email_empresa": "alberto@bosonit.com",
-      "email_personal": "alberto@gmail.com",
-      "ciudad": "jaen",
-      "actividad": false,
-      "fecha": "2021-08-12T00:00:00.000+00:00",
-      "imagen_url": "",
-      "termination_date": "2021-08-13T00:00:00.000+00:00"
-    },
-    {
-      "user": "Jose",
-      "password": "1234",
-      "surname": "Vicente Campos",
-      "email_empresa": "alberto@bosonit.com",
-      "email_personal": "alberto@gmail.com",
-      "ciudad": "jaen",
-      "actividad": false,
-      "fecha": "2020-03-03T00:00:00.000+00:00",
-      "imagen_url": "",
-      "termination_date": "2020-04-04T00:00:00.000+00:00",
-      "id": 293
     }
   ]
 }
