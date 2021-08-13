@@ -77,19 +77,6 @@
       "fecha": "2021-08-12T00:00:00.000+00:00",
       "imagen_url": "",
       "termination_date": "2021-08-13T00:00:00.000+00:00"
-    },
-    {
-      "id": 294,
-      "user": "Alberto",
-      "password": "1234456",
-      "surname": "Vicente Campos",
-      "email_empresa": "alberto@bosonit.com",
-      "email_personal": "alberto@gmail.com",
-      "ciudad": "jaen",
-      "actividad": false,
-      "fecha": "2021-08-12T00:00:00.000+00:00",
-      "imagen_url": "",
-      "termination_date": "2021-08-11T00:00:00.000+00:00"
     }
   ]
 }

@@ -27,10 +27,9 @@ export class PersonaServicioService {
     
   }
 
-  
   //Borrar persona
   delete(id: number){
-
+    return this.http.delete(this.persona+ '/' + id);
   }
 
 

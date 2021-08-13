@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { Persona } from '../persona/persona';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ListadoComponent implements OnInit {
   title = 'PERSONAS';
   personas: Persona[] = [];
 
-  constructor(private personaServicio: PersonaServicioService) { }
+  constructor(private personaServicio: PersonaServicioService, private router: Router) { }
 
   ngOnInit(): void {
     this.personaServicio.getPersonas()
@@ -23,4 +24,11 @@ export class ListadoComponent implements OnInit {
     })
   }
 
+  crear(){
+    this.router.navigate(['/crear'])
+  }
+
+  recibirEliminar($event: number){
+    this.personas = this.personas.filter((persona: Persona) => persona.id !== $event )
+  }
 }

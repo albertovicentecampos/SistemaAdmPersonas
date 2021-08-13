@@ -12,7 +12,8 @@ const routes: Routes = [
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: 'tarjeta', component: PersonaTarjetaComponent},
     {path: 'inicio', component: ListadoComponent},
-    {path: 'editar/:id', component: FormularioPersonasComponent}
+    {path: 'editar/:id', component: FormularioPersonasComponent},
+    {path: 'crear' , component: FormularioPersonasComponent}
 ];
 
 
