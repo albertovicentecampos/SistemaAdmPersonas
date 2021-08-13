@@ -9,6 +9,7 @@ import { Persona } from './persona';
 export class PersonaServicioService {
 
   private todos = 'http://localhost:3000/personas';
+  private persona = 'http://localhost:3000/personas';
 
   constructor(private http: HttpClient) { }
 
@@ -17,15 +18,15 @@ export class PersonaServicioService {
     return this.http.get<Persona[]>(this.todos);
   }
 
+  getPersona(id: number){
+    return this.http.get<Persona>(this.persona + '/'+ id);
+  }
+
   //Crear persona
   add(){
     
   }
 
-  //Obtener persona unica
-  getPersona(id: number){
-
-  }
   
   //Borrar persona
   delete(id: number){

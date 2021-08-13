@@ -25,6 +25,6 @@ export class PersonaTarjetaComponent implements OnInit {
   }
 
   editar(){
-    this.router.navigate(['/editar',this.persona.id_persona])
+    this.router.navigate(['/editar', this.persona.id])
   }
 }
