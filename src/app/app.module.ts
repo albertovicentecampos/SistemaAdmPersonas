@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
 import { ListadoComponent } from './listado/listado.component';
+import { NavegacionComponent } from './navegacion/navegacion.component';
 
 const material = [
   MatCardModule
@@ -20,7 +21,8 @@ const material = [
     AppComponent,
     FormularioPersonasComponent,
     PersonaTarjetaComponent,
-    ListadoComponent
+    ListadoComponent,
+    NavegacionComponent
   ],
   imports: [
     BrowserModule,

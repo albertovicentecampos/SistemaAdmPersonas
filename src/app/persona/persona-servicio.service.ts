@@ -24,6 +24,7 @@ export class PersonaServicioService {
 
   //Crear persona
   add(persona: Persona) {
+    console.log(persona)
     return this.http.post<Persona>(this.urlpersona, persona);
   }
 
@@ -34,7 +35,6 @@ export class PersonaServicioService {
 
   //Actualizar persona
   update(persona: Persona) {
-    console.log(persona)
     return this.http.put<Persona>(this.urlpersona + '/' + persona.id, persona);
   }
 

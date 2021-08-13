@@ -42,37 +42,32 @@ export class FormularioPersonasComponent implements OnInit {
       }
     )
 
+    if (!this.id) return;
     this.personaServicio.getPersona(this.id).subscribe(
       usuario => {
         this.persona = usuario;
         this.registerForm.patchValue(this.persona);
       }
     )
-    
   }
 
   submit() {
-    if (this.id === -1) {
+    if (!this.id) {
       this.crearPersona();
     } else {
       this.editarPersona();
     }
-    this.route.navigate(['/inicio']);
   }
 
   crearPersona() {
     this.persona = this.registerForm.value;
     this.personaServicio.add(this.persona).subscribe();
-
   }
-  
+
   editarPersona() {
     this.persona = this.registerForm.value;
     this.persona.id = this.id;
     this.personaServicio.update(this.persona).subscribe();
   }
-
-
-
 
 }
