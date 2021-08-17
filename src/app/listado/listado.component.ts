@@ -32,6 +32,6 @@ export class ListadoComponent implements OnInit {
 
   recibirEliminar($event: number): void{
     this.personas = this.personas.filter((persona: Persona) => persona.id !== $event )
-    this.contadorServicio.incrementar(); 
+    this.contadorServicio.incrementar2(); 
   }
 }

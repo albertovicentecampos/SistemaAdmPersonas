@@ -9,11 +9,15 @@ export class ContadorService {
   contador: EventEmitter<number> = new EventEmitter<number>();
 
   cont: number = 0; 
-  constructor() { }
+  cont2: any = 0; 
 
-  incrementar(): void{
-    this.cont++;
-    this.contador.emit(this.cont)
+  constructor() { this.cont2 = localStorage.getItem('cont2')}
+
+
+  incrementar2(): void {
+    this.cont2++;
+    localStorage.setItem('cont2', this.cont2)
+    this.contador.emit(this.cont2);
   }
 
 }

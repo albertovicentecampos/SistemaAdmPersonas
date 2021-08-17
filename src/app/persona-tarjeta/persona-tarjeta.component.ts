@@ -17,7 +17,7 @@ export class PersonaTarjetaComponent implements OnInit {
   @Output() borrar: EventEmitter<number> = new EventEmitter();
 
   //TSlint-> Extension 
-  constructor(private router: Router, private service: PersonaServicioService) {
+  constructor(private router: Router, private service: PersonaServicioService , private contadorServicio: ContadorService) {
     
    }
 
@@ -29,8 +29,12 @@ export class PersonaTarjetaComponent implements OnInit {
   }
 
   eliminar(): void {
+    console.log("Entra para redirigir a inicio");
+    this.router.navigate(['/inicio']);
+    console.log("ya esta");
     this.service.delete(this.persona.id).subscribe()
     this.borrar.emit(this.persona.id)
     console.log("persona borrada")
+
   }
 }

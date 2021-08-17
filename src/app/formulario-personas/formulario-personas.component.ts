@@ -53,22 +53,26 @@ export class FormularioPersonasComponent implements OnInit {
   submit(): void {
     if (!this.id) {
       this.crearPersona();
-      this.route.navigate(['/inicio']);
     } else {
       this.editarPersona();
-      this.route.navigate(['/inicio']);
     }
   }
 
   crearPersona(): void {
     this.persona = this.registerForm.value;
-    this.personaServicio.add(this.persona).subscribe();
+    this.personaServicio.add(this.persona).subscribe(c=>{
+      this.persona = c;
+      this.route.navigate(['/inicio']);
+    });
   }
 
   editarPersona(): void {
     this.persona = this.registerForm.value;
     this.persona.id = this.id;
-    this.personaServicio.update(this.persona).subscribe();
+    this.personaServicio.update(this.persona).subscribe(c=> {
+      this.persona = c;
+      this.route.navigate(['/inicio']);
+    });
   }
 
 }

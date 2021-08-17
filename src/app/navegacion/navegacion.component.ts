@@ -10,15 +10,18 @@ import { ContadorService } from '../contador.service';
 })
 export class NavegacionComponent implements OnInit {
 
-  cont: number = 0; 
+  cont: any = 0;
+  cont2: number = 0;
 
-  constructor(private router: Router, private contador: ContadorService ) {
-      this.contador.contador.subscribe(c => {
-        this.cont = c; 
-      })
-   }
+  constructor(private router: Router, private contador: ContadorService) {
+    this.contador.contador.subscribe(cont2 => {
+      this.cont = localStorage.getItem('cont2');
+      console.log("HOLA:"  + this.cont)
+    })
+  }
 
   ngOnInit(): void {
+    this.cont = localStorage.getItem('cont2');
   }
 
   insertar(): void {
