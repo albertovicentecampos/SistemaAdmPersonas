@@ -60,7 +60,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const material = [
   MatCardModule
@@ -127,6 +127,7 @@ const material = [
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
