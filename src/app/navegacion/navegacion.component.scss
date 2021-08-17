@@ -1,0 +1,17 @@
+.contador {
+    display: inline;
+    flex-direction: column-reverse;
+    justify-content:flex-end;
+    align-items: flex-end;
+    margin: 75px;
+  }
+
+  .cuerpo {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }

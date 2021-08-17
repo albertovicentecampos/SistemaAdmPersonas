@@ -1,4 +1,9 @@
 <nav>
-    <button (click)="insertar()">INSERTAR PERSONA</button>
-    <button (click)="inicio()">LISTADO</button>
+    <div class="cuerpo">
+        <button (click)="insertar()">INSERTAR PERSONA</button>
+        <button (click)="inicio()">LISTADO</button> 
+        <div class="contador">
+            <mat-icon matBadge={{cont}} matBadgeColor="primary">home</mat-icon>
+        </div>
+    </div>
 </nav>

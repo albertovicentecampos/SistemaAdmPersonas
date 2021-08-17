@@ -1,57 +1,63 @@
-<div>
+<div class="cuerpo">
     <form (submit)="submit()" [formGroup]="registerForm">
         <div>
             <h1>{{title}} {{persona.user}}</h1>
         </div>
         <div>
-            <div class="form-group">
-                <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" formControlName="user" >
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="text" id="password" formControlName="password">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>USUARIO</mat-label>
+                <input matInput type="text" formControlName="user">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" formControlName="surname">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>PASSWORD</mat-label>
+                <input matInput type="text" formControlName="password">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="emailempresa">Email empresa</label>
-                <input type="text" id="emailempresa" formControlName="email_empresa">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>APELLIDOS</mat-label>
+                <input matInput type="text" formControlName="surname">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="emailpersonal">Email personal</label>
-                <input type="text" id="emailpersonal" formControlName="email_personal">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>EMAIL EMPRESA</mat-label>
+                <input matInput type="text" formControlName="email_empresa">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="ciudad">Ciudad</label>
-                <input type="text" id="ciudad" formControlName="ciudad" >
-            </div>
 
-            <div class="form-group">
-                <label for="actividad">Actividad</label>
-                <input type="text" id="actividad" formControlName="actividad">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>EMAIL PERSONAL</mat-label>
+                <input matInput type="text" formControlName="email_personal">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="fechainicio">Fecha inicio</label>
-                <input type="text" id="fechainicio" formControlName="fecha">
-            </div>
 
-            <div class="form-group">
-                <label for="imagen">Imagen url</label>
-                <input type="text" id="imagen" formControlName="imagen_url">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>CIUDAD</mat-label>
+                <input matInput type="text" formControlName="ciudad">
+            </mat-form-field>
 
-            <div class="form-group">
-                <label for="fechafin">Fecha fin</label>
-                <input type="text" id="fechafin" formControlName="termination_date">
-            </div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>ACTIVIDAD</mat-label>
+                <input matInput type="text" formControlName="actividad">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>FECHA INICIO</mat-label>
+                <input matInput type="text" formControlName="fecha">
+            </mat-form-field>
+
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>IMAGEN</mat-label>
+                <input matInput type="text" formControlName="imagen_url">
+            </mat-form-field>
+
+
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>FECHA FIN</mat-label>
+                <input matInput type="text" formControlName="termination_date">
+            </mat-form-field>
+
 
         </div>
         <div>

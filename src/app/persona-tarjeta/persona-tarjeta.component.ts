@@ -3,6 +3,7 @@ import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
+import { ContadorService } from '../contador.service';
 
 
 @Component({

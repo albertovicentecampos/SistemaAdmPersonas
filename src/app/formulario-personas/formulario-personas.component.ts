@@ -54,8 +54,10 @@ export class FormularioPersonasComponent implements OnInit {
   submit() {
     if (!this.id) {
       this.crearPersona();
+      this.route.navigate(['/inicio']);
     } else {
       this.editarPersona();
+      this.route.navigate(['/inicio']);
     }
   }
 

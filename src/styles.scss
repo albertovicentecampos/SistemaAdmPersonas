@@ -9,7 +9,7 @@
   }
   h1 {
     color: #264D73;
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   h2, h3 {
     color: #444;
@@ -51,7 +51,7 @@
     margin-top: 10px;
   }
   button:hover {
-    background-color: darkgrey;
+    background-color: #264D73;
     color: white;
   }
   button:disabled {
@@ -90,3 +90,14 @@
     padding: .5rem;
   }
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cuerpo{
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
