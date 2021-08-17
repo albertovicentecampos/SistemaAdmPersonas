@@ -13,9 +13,8 @@ export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
 
-  title = "EDICION PERSONAS"
-  id = -1
-
+  title: string = "EDICION PERSONAS"
+  id: number = -1
   persona: Persona = inicializar();
 
   registerForm = this.formBuilder.group({
@@ -51,7 +50,7 @@ export class FormularioPersonasComponent implements OnInit {
     )
   }
 
-  submit() {
+  submit(): void {
     if (!this.id) {
       this.crearPersona();
       this.route.navigate(['/inicio']);
@@ -61,12 +60,12 @@ export class FormularioPersonasComponent implements OnInit {
     }
   }
 
-  crearPersona() {
+  crearPersona(): void {
     this.persona = this.registerForm.value;
     this.personaServicio.add(this.persona).subscribe();
   }
 
-  editarPersona() {
+  editarPersona(): void {
     this.persona = this.registerForm.value;
     this.persona.id = this.id;
     this.personaServicio.update(this.persona).subscribe();

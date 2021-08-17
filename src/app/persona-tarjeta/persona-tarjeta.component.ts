@@ -24,14 +24,11 @@ export class PersonaTarjetaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getPersonas(){
-  }
-
-  editar(){
+  editar(): void {
     this.router.navigate(['/editar', this.persona.id])
   }
 
-  eliminar(){
+  eliminar(): void {
     this.service.delete(this.persona.id).subscribe()
     this.borrar.emit(this.persona.id)
     console.log("persona borrada")

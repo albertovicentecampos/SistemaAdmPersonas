@@ -11,7 +11,7 @@ export class ContadorService {
   cont: number = 0; 
   constructor() { }
 
-  incrementar(){
+  incrementar(): void{
     this.cont++;
     this.contador.emit(this.cont)
   }

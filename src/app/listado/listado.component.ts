@@ -13,7 +13,7 @@ import { ContadorService } from '../contador.service';
 })
 export class ListadoComponent implements OnInit {
 
-  title = 'LISTA DE PERSONAS';
+  title: string = 'LISTA DE PERSONAS';
   personas: Persona[] = [];
 
   constructor(private personaServicio: PersonaServicioService, private router: Router, private contadorServicio: ContadorService ) { }
@@ -26,13 +26,12 @@ export class ListadoComponent implements OnInit {
     })
   }
 
-  crear(){
+  crear(): void {
     this.router.navigate(['/crear'])
   }
 
-  recibirEliminar($event: number){
+  recibirEliminar($event: number): void{
     this.personas = this.personas.filter((persona: Persona) => persona.id !== $event )
     this.contadorServicio.incrementar(); 
-    
   }
 }

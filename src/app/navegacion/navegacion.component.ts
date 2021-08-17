@@ -11,6 +11,7 @@ import { ContadorService } from '../contador.service';
 export class NavegacionComponent implements OnInit {
 
   cont: number = 0; 
+
   constructor(private router: Router, private contador: ContadorService ) {
       this.contador.contador.subscribe(c => {
         this.cont = c; 
@@ -20,11 +21,11 @@ export class NavegacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  insertar(){
+  insertar(): void {
     this.router.navigate(['/crear'])
   }
 
-  inicio(){
+  inicio(): void {
     this.router.navigate(['/inicio'])
   }
 

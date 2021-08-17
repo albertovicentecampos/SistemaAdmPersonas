@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Persona } from './persona';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,28 +14,28 @@ export class PersonaServicioService {
   constructor(private http: HttpClient) { }
 
   //Obtener todos
-  getPersonas() {
+  getPersonas(): Observable<Persona[]> {
     return this.http.get<Persona[]>(this.urlpersona);
   }
 
   //Obtener una persona
-  getPersona(id: number) {
+  getPersona(id: number): Observable<Persona> {
     return this.http.get<Persona>(this.urlpersona + '/' + id);
   }
 
   //Crear persona
-  add(persona: Persona) {
+  add(persona: Persona): Observable<Persona> {
     console.log(persona)
     return this.http.post<Persona>(this.urlpersona, persona);
   }
 
   //Borrar persona
-  delete(id: number) {
-    return this.http.delete(this.urlpersona + '/' + id);
+  delete(id: number): Observable<Persona> {
+    return this.http.delete<Persona>(this.urlpersona + '/' + id);
   }
 
   //Actualizar persona
-  update(persona: Persona) {
+  update(persona: Persona): Observable<Persona> {
     return this.http.put<Persona>(this.urlpersona + '/' + persona.id, persona);
   }
 
