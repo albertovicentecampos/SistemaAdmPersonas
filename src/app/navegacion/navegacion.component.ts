@@ -13,10 +13,11 @@ export class NavegacionComponent implements OnInit {
   cont: any = 0;
   cont2: number = 0;
 
+
   constructor(private router: Router, private contador: ContadorService) {
     this.contador.contador.subscribe(cont2 => {
       this.cont = localStorage.getItem('cont2');
-      console.log("HOLA:"  + this.cont)
+      console.log("HOLA:" + this.cont)
     })
   }
 

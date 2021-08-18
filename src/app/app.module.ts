@@ -59,8 +59,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 
+//import { RouterLinkActive, Router } from '@angular/router';
+
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LateralComponent } from './lateral/lateral.component';
 
 const material = [
   MatCardModule
@@ -72,9 +76,13 @@ const material = [
     FormularioPersonasComponent,
     PersonaTarjetaComponent,
     ListadoComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    LateralComponent
   ],
   imports: [
+    // RouterLinkActive,
+    // Router,
+    
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

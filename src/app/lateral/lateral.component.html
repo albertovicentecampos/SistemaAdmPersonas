@@ -1,0 +1,17 @@
+<mat-drawer-container class="example-container">
+    <div class="example-sidenav-content">
+        <button type="button" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+    </div>
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <app-navegacion></app-navegacion>
+        <div class="example-sidenav-content">
+            
+        </div>
+    </mat-drawer>
+
+    <router-outlet></router-outlet>
+
+</mat-drawer-container>

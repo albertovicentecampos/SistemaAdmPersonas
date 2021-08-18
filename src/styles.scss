@@ -19,12 +19,13 @@
     font-size: 1.3rem;
   }
   body {
-    padding: .5rem;
-    max-width: 1000px;
+    //padding: 1px;
+    //max-width: 100px;
+    //background-color: blue;
     margin: auto;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 100px) {
     body {
       padding: 2rem;
     }
@@ -33,9 +34,7 @@
     color: #333;
     font-family: Cambria, Georgia, serif;
   }
-  a {
-    cursor: pointer;
-  }
+  
   button {
     background-color: #eee;
     border: none;
@@ -63,7 +62,7 @@
   /* Navigation link styles */
   
   nav a {
-    padding: 5px 10px;
+    padding: 10px 10px;
     text-decoration: none;
     margin-right: 10px;
     margin-top: 10px;
@@ -95,9 +94,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .cuerpo{
   padding: 2rem;
-  max-width: 1000px;
+  max-width: 10000px;
   margin: auto;
   align-items: center;
   justify-content: center;
 }
-

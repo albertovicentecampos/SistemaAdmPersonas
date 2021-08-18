@@ -7,7 +7,6 @@ import { FormularioPersonasComponent } from './formulario-personas/formulario-pe
 import { ListadoComponent } from './listado/listado.component';
 import { PersonaTarjetaComponent } from './persona-tarjeta/persona-tarjeta.component';
 
-
 const routes: Routes = [
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: 'tarjeta', component: PersonaTarjetaComponent},

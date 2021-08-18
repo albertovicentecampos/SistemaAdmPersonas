@@ -1,8 +1,22 @@
 h1 {
+  display:flex;
+  justify-content: center;
     color: #264D73;
     font-size: 2rem;
+    //margin-left: 50px;
+    align-items: center;
   }
 
   .example-form-field {
     width: 800px;
+  }
+
+  .edicion{
+    width: 100%;
+    max-width: 1px;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
   }
