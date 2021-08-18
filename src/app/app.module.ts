@@ -1,4 +1,4 @@
-import { NgModule} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -65,6 +65,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LateralComponent } from './lateral/lateral.component';
+import { VentanaComponent } from './ventana/ventana.component';
 
 const material = [
   MatCardModule
@@ -77,12 +78,19 @@ const material = [
     PersonaTarjetaComponent,
     ListadoComponent,
     NavegacionComponent,
-    LateralComponent
+    LateralComponent,
+    VentanaComponent
+  ],
+  exports: [
+    PersonaTarjetaComponent,
+    FormularioPersonasComponent
+    // MatIconModule,
+    // MatCardModule,
   ],
   imports: [
     // RouterLinkActive,
     // Router,
-    
+    //FormularioPersonasComponent,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -140,10 +148,6 @@ const material = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    PersonaTarjetaComponent
-    // MatIconModule,
-    // MatCardModule,
-  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

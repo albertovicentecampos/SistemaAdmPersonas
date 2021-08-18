@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { Persona } from '../persona/persona';
 import { Router } from '@angular/router';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ContadorService } from '../contador.service';
 
 
@@ -16,7 +15,7 @@ export class ListadoComponent implements OnInit {
   title: string = 'LISTA DE PERSONAS';
   personas: Persona[] = [];
 
-  constructor(private personaServicio: PersonaServicioService, private router: Router, private contadorServicio: ContadorService ) { }
+  constructor(private personaServicio: PersonaServicioService, private router: Router, private contadorServicio: ContadorService) { }
 
   ngOnInit(): void {
     this.personaServicio.getPersonas()
@@ -34,4 +33,9 @@ export class ListadoComponent implements OnInit {
     this.personas = this.personas.filter((persona: Persona) => persona.id !== $event )
     this.contadorServicio.incrementar2(); 
   }
+
+
+
 }
+
+

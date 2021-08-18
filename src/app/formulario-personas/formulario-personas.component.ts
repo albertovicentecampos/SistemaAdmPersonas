@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 @Component({
   selector: 'app-formulario-personas',
   templateUrl: './formulario-personas.component.html',
-  styleUrls: ['./formulario-personas.component.scss']
+  styleUrls: ['./formulario-personas.component.scss'],
 })
 export class FormularioPersonasComponent implements OnInit {
 
