@@ -12,7 +12,9 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
-  @Output() insertar: EventEmitter<number> = new EventEmitter();
+  //@Output() insertar: EventEmitter<number> = new EventEmitter();
+
+  @Output() personaInsertada: EventEmitter<Persona> = new EventEmitter();
 
   title: string = "EDICION PERSONAS"
   id: number = -1
@@ -65,9 +67,11 @@ export class FormularioPersonasComponent implements OnInit {
     this.persona = this.registerForm.value;
     this.personaServicio.add(this.persona).subscribe(c=>{
       this.persona = c;
+      this.personaInsertada.emit(this.persona)
       this.route.navigate(['/inicio']);
     });
-    this.insertar.emit(this.persona.id)
+    
+    //this.insertar.emit(this.persona.id)
   }
 
   editarPersona(): void {

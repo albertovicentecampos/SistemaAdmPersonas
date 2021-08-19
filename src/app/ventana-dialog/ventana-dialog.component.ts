@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Persona } from '../persona/persona';
+import { PersonaTarjetaComponent } from '../persona-tarjeta/persona-tarjeta.component';
+import { inicializar, Persona } from '../persona/persona';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 
 
@@ -14,18 +15,26 @@ export class VentanaDialogComponent implements OnInit {
   personas: Persona[] = [];
   vB: boolean = false; 
   
+  persona: Persona = inicializar();
+  
   constructor(
     public dialogRef: MatDialogRef<VentanaDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Persona, private  personaServicio: PersonaServicioService) { }
-
-  onNoClick(): void {
-    window.location.reload();
-    this.dialogRef.close();
-  }
+    @Inject(MAT_DIALOG_DATA) public data: Persona,
+    private personaService: PersonaServicioService) { 
+    }
 
   ngOnInit(): void {
     
   }
+
+  recibirPadre($event: Persona){
+    this.persona = $event;
+    this.data = this.persona; 
+    console.log("holiwi " + this.data.user)
+    console.log("helouu "+ this.persona.user)
+    this.dialogRef.close(this.persona);
+  }
+
 
 
 }

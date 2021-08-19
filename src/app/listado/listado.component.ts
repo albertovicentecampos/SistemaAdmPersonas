@@ -3,7 +3,9 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { Persona } from '../persona/persona';
 import { Router } from '@angular/router';
 import { ContadorService } from '../contador.service';
+import { VentanaDialogComponent } from '../ventana-dialog/ventana-dialog.component';
 
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-listado',
@@ -16,7 +18,10 @@ export class ListadoComponent implements OnInit {
   valorBoton: boolean = false; 
   personas: Persona[] = [];
 
-  constructor(private personaServicio: PersonaServicioService, private router: Router, private contadorServicio: ContadorService) { }
+  constructor(private personaServicio: PersonaServicioService, 
+              private router: Router, 
+              private contadorServicio: ContadorService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.personaServicio.getPersonas()
@@ -36,8 +41,18 @@ export class ListadoComponent implements OnInit {
   }
 
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(VentanaDialogComponent, {
+      width: '500px',
+      data: {personas: this.personas}
+    });
 
-
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.personas.push(result)
+      }
+    });
+  }
 
 }
 

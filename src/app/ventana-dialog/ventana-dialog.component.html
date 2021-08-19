@@ -1,6 +1,6 @@
 <div mat-dialog-content>
-  <app-formulario-personas #formulario1 [valorBoton]="vB" ></app-formulario-personas>
+  <app-formulario-personas #formulario1 [valorBoton]="vB" (personaInsertada)="recibirPadre($event)" ></app-formulario-personas>
   <div mat-dialog-actions>
-    <button mat-button (click)="formulario1.submit()" (click)="onNoClick()">Insertar</button>
+    <button mat-button (click)="formulario1.submit()">Insertar</button>
   </div>
 </div>

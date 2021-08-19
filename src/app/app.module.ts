@@ -65,7 +65,6 @@ import {OverlayModule} from '@angular/cdk/overlay';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LateralComponent } from './lateral/lateral.component';
-import { VentanaComponent } from './ventana/ventana.component';
 import { VentanaDialogComponent } from './ventana-dialog/ventana-dialog.component';
 
 const material = [
@@ -80,7 +79,6 @@ const material = [
     ListadoComponent,
     NavegacionComponent,
     LateralComponent,
-    VentanaComponent,
     VentanaDialogComponent
   ],
   exports: [

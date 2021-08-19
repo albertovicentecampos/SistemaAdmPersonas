@@ -1,7 +1,7 @@
 <div >
   <h1>{{title}}</h1>
   <div class="add">
-    <app-ventana [vB]="valorBoton"></app-ventana>
+    <button class="tipo" (click)="openDialog()">NUEVA PERSONA</button>
   </div>
   <div class="cuerpo2">
     <div *ngFor="let p of personas">
