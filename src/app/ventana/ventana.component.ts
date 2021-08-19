@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Persona } from '../persona/persona';
-import { FormularioPersonasComponent } from '../formulario-personas/formulario-personas.component';
+
+import { VentanaDialogComponent } from '../ventana-dialog/ventana-dialog.component';
+//import { FormularioPersonasComponent } from '../formulario-personas/formulario-personas.component';
 
 @Component({
   selector: 'app-ventana',
@@ -12,35 +13,22 @@ export class VentanaComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
+  vB: boolean = false;
+
   ngOnInit(): void {
   }
 
     openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
+    const dialogRef = this.dialog.open(VentanaDialogComponent, {
+      width: '500px',
       //data: {name: this.name, animal: this.animal}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
+      //console.log('The dialog was closed');
       // this.animal = result;
     });
   }
 
 }
 
-@Component({
-  selector: 'ventana-dialog',
-  templateUrl: 'ventana-dialog.html',
-})
-export class DialogOverviewExampleDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: Persona) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}

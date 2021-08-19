@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,10 +12,13 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
+  @Output() insertar: EventEmitter<number> = new EventEmitter();
 
   title: string = "EDICION PERSONAS"
   id: number = -1
-  persona: Persona = inicializar();
+  persona: Persona = inicializar(); 
+
+  @Input() valorBoton: boolean = true;
 
   registerForm = this.formBuilder.group({
     user: [''],
@@ -64,6 +67,7 @@ export class FormularioPersonasComponent implements OnInit {
       this.persona = c;
       this.route.navigate(['/inicio']);
     });
+    this.insertar.emit(this.persona.id)
   }
 
   editarPersona(): void {

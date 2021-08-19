@@ -1,11 +1,12 @@
 <div >
   <h1>{{title}}</h1>
   <div class="add">
-    <app-ventana></app-ventana>
+    <app-ventana [vB]="valorBoton"></app-ventana>
   </div>
   <div class="cuerpo2">
     <div *ngFor="let p of personas">
-      <app-persona-tarjeta (borrar)="recibirEliminar($event)" [persona]="p"> </app-persona-tarjeta>
+      <app-persona-tarjeta (borrar)="recibirEliminar($event)" 
+                   [persona]="p"> </app-persona-tarjeta>
     </div>
   </div>
 </div>

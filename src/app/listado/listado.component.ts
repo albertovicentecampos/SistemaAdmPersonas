@@ -13,6 +13,7 @@ import { ContadorService } from '../contador.service';
 export class ListadoComponent implements OnInit {
 
   title: string = 'LISTA DE PERSONAS';
+  valorBoton: boolean = false; 
   personas: Persona[] = [];
 
   constructor(private personaServicio: PersonaServicioService, private router: Router, private contadorServicio: ContadorService) { }
@@ -33,6 +34,8 @@ export class ListadoComponent implements OnInit {
     this.personas = this.personas.filter((persona: Persona) => persona.id !== $event )
     this.contadorServicio.incrementar2(); 
   }
+
+
 
 
 
