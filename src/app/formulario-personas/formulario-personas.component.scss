@@ -8,7 +8,13 @@ h1 {
   }
 
   .example-form-field {
-    width: auto;
+    width: 700px;
+  }
+
+  .boton {
+    display:flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .edicion{

@@ -40,10 +40,10 @@ export class ListadoComponent implements OnInit {
     this.contadorServicio.incrementar2(); 
   }
 
-
   openDialog(): void {
     const dialogRef = this.dialog.open(VentanaDialogComponent, {
-      width: '500px',
+      height: '700px',
+      width: '800px',
       data: {personas: this.personas}
     });
 
