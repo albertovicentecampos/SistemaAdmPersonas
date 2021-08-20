@@ -25,15 +25,13 @@ export class PersonaServicioService {
 
   //Obtener todos
   getPersonas(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.urlpersona, {
-      headers: this.headers()
-    });
+    return this.http.get<Persona[]>(this.urlpersona + 'a');
   }
 
   //Obtener una persona
   getPersona(id: number): Observable<Persona> {
     //ERROR PUESTO A PROPOSITO, PARA VER QUE FUNCIONA EL RESOLVER. PARA QUE FUNCIONE, QUITAR EL 'a'
-    return this.http.get<Persona>(this.urlpersona+ 'a' + '/' + id, {
+    return this.http.get<Persona>(this.urlpersona +'a' +'/' + id, {
       headers: this.headers()
     });
   }

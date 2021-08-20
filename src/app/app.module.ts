@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -66,6 +66,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LateralComponent } from './lateral/lateral.component';
 import { VentanaDialogComponent } from './ventana-dialog/ventana-dialog.component';
+import { ErrorComponent } from './error/error.component';
+
+import { GlobalErrorHandlerService } from './global-error-handler.service';
 
 const material = [
   MatCardModule
@@ -79,7 +82,8 @@ const material = [
     ListadoComponent,
     NavegacionComponent,
     LateralComponent,
-    VentanaDialogComponent
+    VentanaDialogComponent,
+    ErrorComponent
   ],
   exports: [
     PersonaTarjetaComponent,
@@ -146,7 +150,11 @@ const material = [
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, 
+      useClass: GlobalErrorHandlerService
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -13,7 +13,8 @@ export class PersonaResolver implements Resolve<Observable<any>>{
 
     constructor(private personaService: PersonaServicioService) {
     }
-    
+
+
     resolve(route: ActivatedRouteSnapshot) {
         let id = Number(route.paramMap.get('id'))
         return this.personaService.getPersona(id).pipe(
@@ -24,5 +25,8 @@ export class PersonaResolver implements Resolve<Observable<any>>{
                 return of()
             })
         )
+
+
     }
+
 }
