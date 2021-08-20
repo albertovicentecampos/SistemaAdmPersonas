@@ -8,23 +8,23 @@
       "email_personal": "alberto@gmail.com",
       "ciudad": "jaen",
       "actividad": false,
-      "fecha": "2021-08-20T00:00:00.000+00:00",
+      "fecha": "2021-08-20T07:55:04.911Z",
       "imagen_url": "",
-      "termination_date": "2021-08-14T00:00:00.000+00:00",
-      "id": 226
+      "termination_date": "2021-08-20T07:55:04.911Z",
+      "id": 1
     },
     {
       "user": "Teresa",
-      "password": "",
-      "surname": "Ogayar",
+      "password": "12345",
+      "surname": "Ogayar de Dios",
       "email_empresa": "",
       "email_personal": "",
       "ciudad": "",
       "actividad": false,
-      "fecha": "2021-08-18T08:16:44.866Z",
+      "fecha": "2021-08-20T07:55:41.738Z",
       "imagen_url": "",
-      "termination_date": "2021-08-18T08:16:44.866Z",
-      "id": 227
+      "termination_date": "2021-08-20T07:55:41.738Z",
+      "id": 2
     }
   ]
 }

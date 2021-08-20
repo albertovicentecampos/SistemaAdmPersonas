@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Persona } from './persona';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class PersonaServicioService {
 
-  private urlpersona = 'http://localhost:3000/personas';
+  private urlpersona: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 

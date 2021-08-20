@@ -1,12 +1,17 @@
-<div >
+<div>
   <h1>{{title}}</h1>
   <div class="add">
     <button class="tipo" (click)="openDialog()">NUEVA PERSONA</button>
   </div>
-  <div class="cuerpo2">
+  <div class="cuerpo2" *ngIf="personas.length > 0 else nopeople">
     <div *ngFor="let p of personas">
-      <app-persona-tarjeta (borrar)="recibirEliminar($event)" 
-                   [persona]="p"> </app-persona-tarjeta>
+      <app-persona-tarjeta (borrar)="recibirEliminar($event)" [persona]="p"> </app-persona-tarjeta>
     </div>
   </div>
+
+  <ng-template #nopeople>
+    <h2>No existen personas para mostrar</h2>
+  </ng-template>
+
+
 </div>
