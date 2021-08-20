@@ -18,7 +18,9 @@ export class FormularioPersonasComponent implements OnInit {
 
   title: string = "EDICION PERSONAS"
   id: number = -1
-  persona: Persona = inicializar(); 
+  persona: Persona = inicializar();
+
+  personaPrueba: Persona = inicializar();
 
   @Input() valorBoton: boolean = true;
 
@@ -36,7 +38,15 @@ export class FormularioPersonasComponent implements OnInit {
   })
 
 
-  constructor(private formBuilder: FormBuilder, private router: ActivatedRoute, private personaServicio: PersonaServicioService, private route: Router) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: ActivatedRoute,
+    private personaServicio: PersonaServicioService,
+    private route: Router,
+  ) {
+
+    this.personaPrueba = this.router.snapshot.data.persona
+    console.log(this.router.snapshot.data.persona)
+  }
 
   ngOnInit(): void {
     this.router.params.subscribe(
@@ -45,6 +55,8 @@ export class FormularioPersonasComponent implements OnInit {
         console.log(this.id)
       }
     )
+
+    //console.log(this.router.snapshot.data.persona)
 
     if (!this.id) return;
     this.personaServicio.getPersona(this.id).subscribe(
@@ -65,19 +77,19 @@ export class FormularioPersonasComponent implements OnInit {
 
   crearPersona(): void {
     this.persona = this.registerForm.value;
-    this.personaServicio.add(this.persona).subscribe(c=>{
+    this.personaServicio.add(this.persona).subscribe(c => {
       this.persona = c;
       this.personaInsertada.emit(this.persona)
       this.route.navigate(['/inicio']);
     });
-    
+
     //this.insertar.emit(this.persona.id)
   }
 
   editarPersona(): void {
     this.persona = this.registerForm.value;
     this.persona.id = this.id;
-    this.personaServicio.update(this.persona).subscribe(c=> {
+    this.personaServicio.update(this.persona).subscribe(c => {
       this.persona = c;
       this.route.navigate(['/inicio']);
     });

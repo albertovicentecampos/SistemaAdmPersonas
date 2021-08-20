@@ -14,14 +14,28 @@ export class PersonaServicioService {
 
   constructor(private http: HttpClient) { }
 
+  //HEADER
+  headers(){
+    return { 
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer`
+    }
+  }
+
   //Obtener todos
   getPersonas(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.urlpersona);
+    return this.http.get<Persona[]>(this.urlpersona, {
+      headers: this.headers()
+    });
   }
 
   //Obtener una persona
   getPersona(id: number): Observable<Persona> {
-    return this.http.get<Persona>(this.urlpersona + '/' + id);
+    //ERROR PUESTO A PROPOSITO, PARA VER QUE FUNCIONA EL RESOLVER. PARA QUE FUNCIONE, QUITAR EL 'a'
+    return this.http.get<Persona>(this.urlpersona+ 'a' + '/' + id, {
+      headers: this.headers()
+    });
   }
 
   //Crear persona
