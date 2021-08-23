@@ -4,6 +4,7 @@ import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { ThemePalette } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-formulario-personas',
@@ -50,6 +51,7 @@ export class FormularioPersonasComponent implements OnInit {
     private router: ActivatedRoute,
     private personaServicio: PersonaServicioService,
     private route: Router,
+    private matSnackBar: MatSnackBar
   ) {
 
     this.personaPrueba = this.router.snapshot.data.persona
@@ -91,6 +93,7 @@ export class FormularioPersonasComponent implements OnInit {
       this.persona = c;
       this.personaInsertada.emit(this.persona)
       this.route.navigate(['/inicio']);
+      this.mensaje("Persona creada")
     });
 
     //this.insertar.emit(this.persona.id)
@@ -102,7 +105,16 @@ export class FormularioPersonasComponent implements OnInit {
     this.personaServicio.update(this.persona).subscribe(c => {
       this.persona = c;
       this.route.navigate(['/inicio']);
+      this.mensaje("Campos modificados")
     });
   }
+
+  mensaje(mensaje: string){
+    this.matSnackBar.open(mensaje, " ",{
+      duration:3000
+    })
+  }
+
+  
 
 }

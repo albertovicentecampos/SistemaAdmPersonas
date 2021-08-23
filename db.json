@@ -7,7 +7,7 @@
       "email_empresa": "alberto@bosonit.com",
       "email_personal": "alberto@gmail.com",
       "ciudad": "jaen",
-      "actividad": false,
+      "actividad": true,
       "fecha": "2021-08-19",
       "imagen_url": "",
       "termination_date": "2021-08-29",

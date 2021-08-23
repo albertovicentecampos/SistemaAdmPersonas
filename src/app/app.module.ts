@@ -148,7 +148,6 @@ const material = [
     PortalModule,
     ScrollingModule,
     BrowserAnimationsModule
-
   ],
   providers: [
     { provide: ErrorHandler, 
