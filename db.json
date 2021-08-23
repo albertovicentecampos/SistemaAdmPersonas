@@ -2,12 +2,12 @@
   "personas": [
     {
       "user": "Alberto",
-      "password": "1234",
+      "password": "12345656",
       "surname": "Vicente Campos",
       "email_empresa": "alberto@bosonit.com",
       "email_personal": "alberto@gmail.com",
       "ciudad": "jaen",
-      "actividad": true,
+      "actividad": false,
       "fecha": "2021-08-19",
       "imagen_url": "",
       "termination_date": "2021-08-29",
@@ -15,7 +15,7 @@
     },
     {
       "user": "Teresa",
-      "password": "12345",
+      "password": "1234",
       "surname": "Ogayar de Dios",
       "email_empresa": "",
       "email_personal": "",

@@ -20,10 +20,10 @@ export class FormularioPersonasComponent implements OnInit {
   title: string = "EDICION PERSONAS"
   id: number = -1
 
-  color: ThemePalette = 'accent';
+  color: ThemePalette = 'primary';
   checked = false;
   disabled = false;
-  
+
   isChecked = true;
 
   persona: Persona = inicializar();
