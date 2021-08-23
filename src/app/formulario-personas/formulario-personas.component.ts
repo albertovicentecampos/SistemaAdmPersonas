@@ -6,6 +6,8 @@ import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-formulario-personas',
   templateUrl: './formulario-personas.component.html',
@@ -34,7 +36,7 @@ export class FormularioPersonasComponent implements OnInit {
   @Input() valorBoton: boolean = true;
 
   registerForm = this.formBuilder.group({
-    user: [''],
+    user: ['', [Validators.required, Validators.minLength(3)]],
     password: [''],
     surname: [''],
     email_empresa: [''],
@@ -80,11 +82,17 @@ export class FormularioPersonasComponent implements OnInit {
   }
 
   submit(): void {
-    if (!this.id) {
-      this.crearPersona();
-    } else {
-      this.editarPersona();
+
+    if(this.registerForm.invalid){
+      return; 
+    }else{
+      if (!this.id) {
+        this.crearPersona();
+      } else {
+        this.editarPersona();
+      }
     }
+
   }
 
   crearPersona(): void {
@@ -115,6 +123,10 @@ export class FormularioPersonasComponent implements OnInit {
     })
   }
 
+
+  campoValido(campo : string){
+    return this.registerForm.controls[campo].errors && this.registerForm.controls[campo].touched; 
+  }
   
 
 }
