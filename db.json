@@ -1,16 +1,16 @@
 {
   "personas": [
     {
-      "user": "Alber",
+      "user": "Alberto",
       "password": "1234",
       "surname": "Vicente Campos",
       "email_empresa": "alberto@bosonit.com",
       "email_personal": "alberto@gmail.com",
       "ciudad": "jaen",
-      "actividad": false,
-      "fecha": "2021-08-20T07:55:04.911Z",
+      "actividad": true,
+      "fecha": "2021-08-19",
       "imagen_url": "",
-      "termination_date": "2021-08-20T07:55:04.911Z",
+      "termination_date": "2021-08-29",
       "id": 1
     },
     {
@@ -20,7 +20,7 @@
       "email_empresa": "",
       "email_personal": "",
       "ciudad": "",
-      "actividad": false,
+      "actividad": true,
       "fecha": "2021-08-20T07:55:41.738Z",
       "imagen_url": "",
       "termination_date": "2021-08-20T07:55:41.738Z",

@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-formulario-personas',
@@ -18,6 +19,13 @@ export class FormularioPersonasComponent implements OnInit {
 
   title: string = "EDICION PERSONAS"
   id: number = -1
+
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
+  
+  isChecked = true;
+
   persona: Persona = inicializar();
 
   personaPrueba: Persona = inicializar();
@@ -46,6 +54,8 @@ export class FormularioPersonasComponent implements OnInit {
 
     this.personaPrueba = this.router.snapshot.data.persona
     console.log(this.router.snapshot.data.persona)
+
+
   }
 
   ngOnInit(): void {

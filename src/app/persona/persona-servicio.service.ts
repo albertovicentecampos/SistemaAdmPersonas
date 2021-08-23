@@ -31,7 +31,7 @@ export class PersonaServicioService {
   //Obtener una persona
   getPersona(id: number): Observable<Persona> {
     //ERROR PUESTO A PROPOSITO, PARA VER QUE FUNCIONA EL RESOLVER. PARA QUE FUNCIONE, QUITAR EL 'a'
-    return this.http.get<Persona>(this.urlpersona +'a' +'/' + id, {
+    return this.http.get<Persona>(this.urlpersona +'/' + id, {
       headers: this.headers()
     });
   }
