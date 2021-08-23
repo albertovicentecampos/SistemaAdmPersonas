@@ -7,6 +7,18 @@ h1 {
     align-items: center;
   }
 
+
+  .formulario { 
+    margin-top: 30px;
+  }
+
+  .obligatorio { 
+    display:flex;
+    justify-content: center;
+    font-style: oblique;
+      font-size: 0.80rem;
+      align-items: center;
+  }
   .example-form-field {
     width: 700px;
   }

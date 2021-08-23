@@ -1,43 +1,77 @@
 <h1>{{title}} {{persona.user}}</h1>
 <div class="edicion">
     <form (submit)="submit()" [formGroup]="registerForm">
-        <div>
+        <div class="obligatorio">
+            (*) Campos obligatorios
         </div>
-        <div>
+        <div class="formulario">
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>USUARIO</mat-label>
+                <mat-label>USUARIO * </mat-label>
                 <input matInput type="text" formControlName="user">
-                <span class="form-text text-danger" *ngIf="campoValido('user')"> El nombre de usuario debe de tener como mínimo 4 caracteres y como máximo 10</span>
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('user')"> El nombre de usuario debe de tener
+                        como mínimo 4 caracteres y como máximo 10</span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>PASSWORD</mat-label>
+                <mat-label>PASSWORD * </mat-label>
                 <input matInput type="password" formControlName="password">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('password')"> La contraseña debe de tener
+                        como mínimo 8 caracteres </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>APELLIDOS</mat-label>
+                <mat-label>APELLIDOS * </mat-label>
                 <input matInput type="text" formControlName="surname">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('surname')"> Los apellidos son obligatorios
+                    </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>EMAIL EMPRESA</mat-label>
+                <mat-label>EMAIL EMPRESA * </mat-label>
                 <input matInput type="text" formControlName="email_empresa">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('email_empresa')"> Email corporativo no
+                        válido </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>EMAIL PERSONAL</mat-label>
+                <mat-label>EMAIL PERSONAL * </mat-label>
                 <input matInput type="text" formControlName="email_personal">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('email_personal')"> Email personal no válido
+                    </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>CIUDAD</mat-label>
+                <mat-label>CIUDAD * </mat-label>
                 <input matInput type="text" formControlName="ciudad">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('ciudad')"> La ciudad es obligatoria </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>FECHA INICIO</mat-label>
+                <mat-label>FECHA INICIO * </mat-label>
                 <input matInput type="date" formControlName="fecha">
+                <div class="obligatorio">
+                    <span class="form-text text-danger" *ngIf="campoValido('fecha')"> La fecha de inicio es obligatoria
+                    </span>
+                </div>
+
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
@@ -51,12 +85,13 @@
             </mat-form-field>
 
             <section class="example-form-field" appearance="fill">
-                <mat-slide-toggle formControlName="actividad" [color]="color" >Actividad</mat-slide-toggle>
+                <mat-slide-toggle formControlName="actividad" [color]="color">Actividad</mat-slide-toggle>
             </section>
         </div>
 
         <div class="boton" *ngIf="this.valorBoton">
-            <button class="submit">Guardar</button>
+            <button class="submit" >Guardar</button>
+            <button (click)="cancelar()">Cancelar</button>
         </div>
     </form>
 </div>

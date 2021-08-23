@@ -1,4 +1,9 @@
+
+<div class="modal-header">
+  <button type="button" class="close" (click)="cerrar()" data-dismiss="modal" aria-hidden="true"> x </button>
+</div>
 <app-formulario-personas #formulario1 [valorBoton]="vB" (personaInsertada)="recibirPadre($event)" ></app-formulario-personas>
 <div class="boton" mat-dialog-actions>
   <button mat-button  (click)="formulario1.submit()">Insertar</button>
+  <button mat-button  (click)="cerrar()">Cancelar</button>
 </div>

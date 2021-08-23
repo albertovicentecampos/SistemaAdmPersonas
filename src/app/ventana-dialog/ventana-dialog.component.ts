@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { PersonaTarjetaComponent } from '../persona-tarjeta/persona-tarjeta.component';
 import { inicializar, Persona } from '../persona/persona';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
@@ -14,13 +15,15 @@ export class VentanaDialogComponent implements OnInit {
 
   personas: Persona[] = [];
   vB: boolean = false; 
+
   
   persona: Persona = inicializar();
   
   constructor(
     public dialogRef: MatDialogRef<VentanaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Persona,
-    private personaService: PersonaServicioService) { 
+    private personaService: PersonaServicioService,
+    private route: Router) { 
     }
 
   ngOnInit(): void {
@@ -35,6 +38,9 @@ export class VentanaDialogComponent implements OnInit {
     this.dialogRef.close(this.persona);
   }
 
+  cerrar(){
+    this.dialogRef.close();
+  }
 
 
 }

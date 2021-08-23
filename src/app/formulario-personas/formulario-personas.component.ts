@@ -16,34 +16,27 @@ import { Validators } from '@angular/forms';
 export class FormularioPersonasComponent implements OnInit {
 
   @Input() personaEditar: Persona = inicializar();
-  //@Output() insertar: EventEmitter<number> = new EventEmitter();
-
   @Output() personaInsertada: EventEmitter<Persona> = new EventEmitter();
+  @Input() valorBoton: boolean = true;
 
   title: string = "EDICION PERSONAS"
   id: number = -1
 
   color: ThemePalette = 'primary';
-  checked = false;
-  disabled = false;
-
-  isChecked = true;
 
   persona: Persona = inicializar();
 
   personaPrueba: Persona = inicializar();
 
-  @Input() valorBoton: boolean = true;
-
   registerForm = this.formBuilder.group({
-    user: ['', [Validators.required, Validators.minLength(3)]],
-    password: [''],
-    surname: [''],
-    email_empresa: [''],
-    email_personal: [''],
-    ciudad: [''],
+    user: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+    password: ['',[Validators.required, Validators.minLength(8)]],
+    surname: ['',[Validators.required]],
+    email_empresa: ['',[Validators.required]],
+    email_personal: ['',[Validators.required]],
+    ciudad: ['',[Validators.required]],
     actividad: [false],
-    fecha: [new Date()],
+    fecha: [new Date(),[Validators.required]],
     imagen_url: [''],
     termination_date: [new Date()]
   })
@@ -58,7 +51,6 @@ export class FormularioPersonasComponent implements OnInit {
 
     this.personaPrueba = this.router.snapshot.data.persona
     console.log(this.router.snapshot.data.persona)
-
 
   }
 
@@ -82,7 +74,6 @@ export class FormularioPersonasComponent implements OnInit {
   }
 
   submit(): void {
-
     if(this.registerForm.invalid){
       return; 
     }else{
@@ -92,7 +83,10 @@ export class FormularioPersonasComponent implements OnInit {
         this.editarPersona();
       }
     }
+  }
 
+  cancelar(): void {
+    this.route.navigate(['/inicio']);
   }
 
   crearPersona(): void {
