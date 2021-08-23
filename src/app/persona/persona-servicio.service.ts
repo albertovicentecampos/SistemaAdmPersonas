@@ -25,7 +25,7 @@ export class PersonaServicioService {
 
   //Obtener todos
   getPersonas(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.urlpersona + 'a');
+    return this.http.get<Persona[]>(this.urlpersona);
   }
 
   //Obtener una persona
