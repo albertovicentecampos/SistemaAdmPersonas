@@ -1,6 +1,9 @@
 <h1>{{title}} {{persona.user}}</h1>
+
 <div class="edicion">
+
     <form (submit)="submit()" [formGroup]="registerForm">
+
         <div class="obligatorio">
             (*) Campos obligatorios
         </div>
@@ -89,9 +92,9 @@
             </section>
         </div>
 
-        <div class="boton" *ngIf="this.valorBoton">
-            <button class="submit" >Guardar</button>
-            <button (click)="cancelar()">Cancelar</button>
+        <div class="boton" >
+            <button  mat-button class="submit" >Guardar</button>
+            <button mat-button (click)="cancelar()" *ngIf="this.valorBoton">Cancelar</button>
         </div>
     </form>
 </div>

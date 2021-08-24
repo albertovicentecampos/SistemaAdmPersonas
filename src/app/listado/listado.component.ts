@@ -42,7 +42,7 @@ export class ListadoComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(VentanaDialogComponent, {
-      height: '700px',
+      height: '600px',
       width: '800px',
       data: {personas: this.personas}
     });

@@ -7,6 +7,7 @@ import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-personas',
@@ -46,7 +47,8 @@ export class FormularioPersonasComponent implements OnInit {
     private router: ActivatedRoute,
     private personaServicio: PersonaServicioService,
     private route: Router,
-    private matSnackBar: MatSnackBar
+    private matSnackBar: MatSnackBar, 
+    private location: Location
   ) {
 
     this.personaPrueba = this.router.snapshot.data.persona
@@ -120,6 +122,10 @@ export class FormularioPersonasComponent implements OnInit {
 
   campoValido(campo : string){
     return this.registerForm.controls[campo].errors && this.registerForm.controls[campo].touched; 
+  }
+
+  volver(){
+      this.location.back(); 
   }
   
 

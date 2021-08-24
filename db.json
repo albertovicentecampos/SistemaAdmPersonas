@@ -7,7 +7,7 @@
       "email_empresa": "v",
       "email_personal": "v",
       "ciudad": "j",
-      "actividad": false,
+      "actividad": true,
       "fecha": "2021-08-14",
       "imagen_url": "",
       "termination_date": "2021-08-15",
