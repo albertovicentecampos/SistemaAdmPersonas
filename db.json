@@ -2,15 +2,15 @@
   "personas": [
     {
       "user": "Teresa",
-      "password": "1234",
+      "password": "12345678",
       "surname": "Ogayar de Dios",
-      "email_empresa": "",
-      "email_personal": "",
-      "ciudad": "",
-      "actividad": true,
-      "fecha": "2021-08-20T07:55:41.738Z",
+      "email_empresa": "v",
+      "email_personal": "v",
+      "ciudad": "j",
+      "actividad": false,
+      "fecha": "2021-08-14",
       "imagen_url": "",
-      "termination_date": "2021-08-20T07:55:41.738Z",
+      "termination_date": "2021-08-15",
       "id": 2
     },
     {
