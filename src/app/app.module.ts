@@ -70,6 +70,7 @@ import { ErrorComponent } from './error/error.component';
 
 import { GlobalErrorHandlerService } from './global-error-handler.service';
 
+
 const material = [
   MatCardModule
 ]

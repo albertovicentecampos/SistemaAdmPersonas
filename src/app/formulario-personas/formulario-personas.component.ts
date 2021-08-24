@@ -20,7 +20,7 @@ export class FormularioPersonasComponent implements OnInit {
   @Output() personaInsertada: EventEmitter<Persona> = new EventEmitter();
   @Input() valorBoton: boolean = true;
 
-  title: string = "EDICION PERSONAS"
+  title: string = "EDICIÓN PERSONAS"
   id: number = -1
 
   color: ThemePalette = 'primary';

@@ -1,16 +1,43 @@
-<mat-drawer-container class="example-container">
-    <div class="example-sidenav-content">
-        <button type="button" mat-icon-button (click)="drawer.toggle()">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+<div class="example-container">
+    <mat-toolbar class="example-toolbar">
+        <button  mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
         </button>
-        <button type="button" mat-icon-button (click)="volver()">
+        <button class="example-app-name" mat-icon-button (click)="volver()">
             <mat-icon aria-label="Side nav toggle icon">keyboard_backspace</mat-icon>
         </button>
-    </div>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <app-navegacion></app-navegacion>
+        <h1 class="example-app-name">APLICACIÓN PERSONAS</h1>
+    </mat-toolbar>
+    
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <app-navegacion></app-navegacion>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content class="contenido">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+
+
+
+
+<!-- <mat-drawer-container>
         <div class="example-sidenav-content">
+            <button type="button" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <button type="button" mat-icon-button (click)="volver()">
+                <mat-icon aria-label="Side nav toggle icon">keyboard_backspace</mat-icon>
+            </button>
         </div>
-    </mat-drawer>
-    <router-outlet></router-outlet>
-</mat-drawer-container>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <app-navegacion></app-navegacion>
+            <div class="example-sidenav-content">
+            </div>
+        </mat-drawer>
+    </mat-drawer-container> -->
