@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, KeyValueDiffers } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { inicializar, Persona } from '../persona/persona';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -29,12 +29,14 @@ export class FormularioPersonasComponent implements OnInit {
 
   personaPrueba: Persona = inicializar();
 
+  hide = true;
+
   registerForm = this.formBuilder.group({
     user: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
     password: ['',[Validators.required, Validators.minLength(8)]],
     surname: ['',[Validators.required]],
-    email_empresa: ['',[Validators.required]],
-    email_personal: ['',[Validators.required]],
+    email_empresa: ['',[Validators.required, Validators.email]],
+    email_personal: ['',[Validators.required, Validators.email]],
     ciudad: ['',[Validators.required]],
     actividad: [false],
     fecha: [new Date(),[Validators.required]],

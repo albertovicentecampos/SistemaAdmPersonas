@@ -12,48 +12,65 @@
                 <mat-label>USUARIO * </mat-label>
                 <input matInput type="text" formControlName="user">
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('user')"> El nombre de usuario debe de tener
-                        como mínimo 4 caracteres y como máximo 10</span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('user')"> El nombre de usuario debe de tener
+                            como mínimo 4 caracteres y como máximo 10</span>
+                    </mat-error>
+                </div>
+            </mat-form-field>
+
+            
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>APELLIDOS * </mat-label>
+                <input matInput type="text" formControlName="surname">
+                <div class="obligatorio">
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('surname')"> Los apellidos son obligatorios
+                        </span>
+                    </mat-error>
+
                 </div>
 
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>PASSWORD * </mat-label>
-                <input matInput type="password" formControlName="password">
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('password')"> La contraseña debe de tener
-                        como mínimo 8 caracteres </span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('password')"> La contraseña debe de tener
+                            como mínimo 8 caracteres </span>
+                    </mat-error>
                 </div>
-
             </mat-form-field>
 
-            <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>APELLIDOS * </mat-label>
-                <input matInput type="text" formControlName="surname">
-                <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('surname')"> Los apellidos son obligatorios
-                    </span>
-                </div>
-
-            </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>EMAIL EMPRESA * </mat-label>
-                <input matInput type="text" formControlName="email_empresa">
+                <input matInput type="email" formControlName="email_empresa" placeholder="Formato. pat@example.com">
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('email_empresa')"> Email corporativo no
-                        válido </span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('email_empresa')"> Email corporativo no
+                            válido </span>
+                    </mat-error>
+
                 </div>
 
             </mat-form-field>
 
+
             <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>EMAIL PERSONAL * </mat-label>
-                <input matInput type="text" formControlName="email_personal">
+                <input matInput type="email" formControlName="email_personal" placeholder="Ex. pat@example.com">
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('email_personal')"> Email personal no válido
-                    </span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('email_personal')"> Email personal no válido
+                        </span>
+                    </mat-error>
+
                 </div>
 
             </mat-form-field>
@@ -62,7 +79,9 @@
                 <mat-label>CIUDAD * </mat-label>
                 <input matInput type="text" formControlName="ciudad">
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('ciudad')"> La ciudad es obligatoria </span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('ciudad')"> La ciudad es obligatoria </span>
+                    </mat-error>
                 </div>
 
             </mat-form-field>
@@ -71,10 +90,11 @@
                 <mat-label>FECHA INICIO * </mat-label>
                 <input matInput type="date" formControlName="fecha">
                 <div class="obligatorio">
-                    <span class="form-text text-danger" *ngIf="campoValido('fecha')"> La fecha de inicio es obligatoria
-                    </span>
+                    <mat-error>
+                        <span class="form-text text-danger" *ngIf="campoValido('fecha')"> La fecha de inicio es obligatoria
+                        </span>                        
+                    </mat-error>
                 </div>
-
             </mat-form-field>
 
             <mat-form-field class="example-form-field" appearance="fill">
@@ -92,8 +112,8 @@
             </section>
         </div>
 
-        <div class="boton" >
-            <button  mat-button class="submit" >Guardar</button>
+        <div class="boton">
+            <button mat-button class="submit">Guardar</button>
             <button mat-button (click)="cancelar()" *ngIf="this.valorBoton">Cancelar</button>
         </div>
     </form>
