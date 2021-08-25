@@ -32,7 +32,7 @@ export class FormularioPersonasComponent implements OnInit {
   hide = true;
 
   registerForm = this.formBuilder.group({
-    user: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+    user: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
     password: ['',[Validators.required, Validators.minLength(8)]],
     surname: ['',[Validators.required]],
     email_empresa: ['',[Validators.required, Validators.email]],
@@ -66,7 +66,6 @@ export class FormularioPersonasComponent implements OnInit {
       }
     )
 
-    //console.log(this.router.snapshot.data.persona)
 
     if (!this.id) return;
     this.personaServicio.getPersona(this.id).subscribe(

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject} from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter} from '@angular/core';
 import { PersonaServicioService } from '../persona/persona-servicio.service';
 import { Persona } from '../persona/persona';
 import { Router } from '@angular/router';
@@ -17,6 +17,7 @@ export class ListadoComponent implements OnInit {
   title: string = 'LISTA DE PERSONAS';
   valorBoton: boolean = false; 
   personas: Persona[] = [];
+  @Output() tit: EventEmitter<string> = new EventEmitter();
 
   constructor(private personaServicio: PersonaServicioService, 
               private router: Router, 
@@ -24,6 +25,7 @@ export class ListadoComponent implements OnInit {
               public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.tit.emit(this.title);
     this.personaServicio.getPersonas()
     .subscribe(todos =>{
       this.personas=todos;

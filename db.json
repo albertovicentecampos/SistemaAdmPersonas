@@ -2,11 +2,11 @@
   "personas": [
     {
       "user": "Teresa",
-      "password": "12345678",
+      "password": "12345678ssssssssssss",
       "surname": "Ogayar de Dios",
       "email_empresa": "a@h.com",
       "email_personal": "a@h.com",
-      "ciudad": "j",
+      "ciudad": "jaen",
       "actividad": true,
       "fecha": "2021-08-14",
       "imagen_url": "",
@@ -17,13 +17,13 @@
       "user": "Alberto",
       "password": "123434534543",
       "surname": "Vicente Campos",
-      "email_empresa": "43",
-      "email_personal": "4",
+      "email_empresa": "e@c.cos",
+      "email_personal": "e@g.com",
       "ciudad": "4",
       "actividad": true,
-      "fecha": "2021-08-20T07:55:41.738Z",
+      "fecha": "2021-08-21",
       "imagen_url": "",
-      "termination_date": "2021-08-20T07:55:41.738Z",
+      "termination_date": "2021-08-21",
       "id": 1
     }
   ]

@@ -10,6 +10,8 @@ export class LateralComponent implements OnInit {
 
   showFiller = false;
   mobileQuery: MediaQueryList;
+  titulo : string = " hola "
+
 
   private _mobileQueryListener: () => void; 
   
@@ -29,5 +31,10 @@ export class LateralComponent implements OnInit {
   }
 
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+
+  recibirTitulo($event: any): void{
+    this.titulo = $event;
+    console.log(this.titulo)
+  }
 
 }
