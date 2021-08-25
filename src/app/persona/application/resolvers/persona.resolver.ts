@@ -2,7 +2,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, Resolve } from '@angular/router
 import { Injectable } from '@angular/core'
 import { Observable, of } from 'rxjs'
 import { catchError, delay } from 'rxjs/operators'
-import { PersonaServicioService } from '../persona/persona-servicio.service'
+import { PersonaServicioService } from '../services/persona-servicio.service'
 import { error } from '@angular/compiler/src/util'
 
 @Injectable({

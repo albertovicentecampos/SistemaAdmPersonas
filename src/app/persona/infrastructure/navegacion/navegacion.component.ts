@@ -1,7 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ContadorService } from '../contador.service';
+import { ContadorService } from 'src/app/persona/application/services/contador/contador.service';
+
 
 @Component({
   selector: 'app-navegacion',

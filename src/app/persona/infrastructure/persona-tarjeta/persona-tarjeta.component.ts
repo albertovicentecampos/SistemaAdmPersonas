@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { inicializar, Persona } from '../persona/persona';
+import { inicializar, Persona } from '../../model/persona';
 import { Router } from '@angular/router';
-import { PersonaServicioService } from '../persona/persona-servicio.service';
-import { ContadorService } from '../contador.service';
+import { PersonaServicioService } from '../../application/services/persona-servicio.service';
+import { ContadorService } from '../../application/services/contador/contador.service';
 import { VentanaDialogComponent } from '../ventana-dialog/ventana-dialog.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 

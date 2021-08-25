@@ -2,15 +2,15 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './modules/app-routing.module';
-import { FormularioPersonasComponent } from './formulario-personas/formulario-personas.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FormularioPersonasComponent } from './persona/infrastructure/formulario-personas/formulario-personas.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PersonaTarjetaComponent } from './persona-tarjeta/persona-tarjeta.component';
+import { PersonaTarjetaComponent } from './persona/infrastructure/persona-tarjeta/persona-tarjeta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { ListadoComponent } from './listado/listado.component';
-import { NavegacionComponent } from './navegacion/navegacion.component';
+import { ListadoComponent } from './persona/infrastructure/listado/listado.component';
+import { NavegacionComponent } from './persona/infrastructure/navegacion/navegacion.component';
 
 // import {MatIconModule} from '@angular/material/icon';
 // import {MatCardModule} from '@angular/material/card';
@@ -64,11 +64,11 @@ import {OverlayModule} from '@angular/cdk/overlay';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LateralComponent } from './lateral/lateral.component';
-import { VentanaDialogComponent } from './ventana-dialog/ventana-dialog.component';
-import { ErrorComponent } from './error/error.component';
+import { LateralComponent } from './persona/infrastructure/lateral/lateral.component';
+import { VentanaDialogComponent } from './persona/infrastructure/ventana-dialog/ventana-dialog.component';
+import { ErrorComponent } from './persona/infrastructure/error/error.component';
 
-import { GlobalErrorHandlerService } from './global-error-handler.service';
+import { GlobalErrorHandlerService } from './persona/application/services/global-error-handler/global-error-handler.service';
 
 
 const material = [

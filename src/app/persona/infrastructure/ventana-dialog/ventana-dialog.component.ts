@@ -2,8 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PersonaTarjetaComponent } from '../persona-tarjeta/persona-tarjeta.component';
-import { inicializar, Persona } from '../persona/persona';
-import { PersonaServicioService } from '../persona/persona-servicio.service';
+import { inicializar, Persona } from '../../model/persona';
+import { PersonaServicioService } from '../../application/services/persona-servicio.service';
 
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, KeyValueDiffers } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { inicializar, Persona } from '../persona/persona';
+import { inicializar, Persona } from '../../model/persona';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PersonaServicioService } from '../persona/persona-servicio.service';
+import { PersonaServicioService } from '../../application/services/persona-servicio.service';
 import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
