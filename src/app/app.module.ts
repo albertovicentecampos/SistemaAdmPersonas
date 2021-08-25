@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { FormularioPersonasComponent } from './formulario-personas/formulario-personas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonaTarjetaComponent } from './persona-tarjeta/persona-tarjeta.component';

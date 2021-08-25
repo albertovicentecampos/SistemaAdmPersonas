@@ -1,7 +1,7 @@
 <div>
   <h1>{{title}}</h1>
   <div class="add">
-    <button class="tipo" (click)="openDialog()">NUEVA PERSONA</button>
+    <button mat-raised-button color="#264D73" class="tipo" (click)="openDialog()">NUEVA PERSONA</button>
   </div>
   <div class="cuerpo2" *ngIf="personas.length > 0 else nopeople">
     <div *ngFor="let p of personas">
