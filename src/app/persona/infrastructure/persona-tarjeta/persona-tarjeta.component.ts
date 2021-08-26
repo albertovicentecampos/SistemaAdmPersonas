@@ -5,6 +5,7 @@ import { PersonaServicioService } from '../../application/services/persona-servi
 import { ContadorService } from '../../application/services/contador/contador.service';
 import { VentanaDialogComponent } from '../ventana-dialog/ventana-dialog.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { VentanaBorrarComponent } from '../ventana-borrar/ventana-borrar.component';
 
 
 
@@ -31,11 +32,19 @@ export class PersonaTarjetaComponent implements OnInit {
   }
 
   eliminar(): void {
-    console.log("Entra para redirigir a inicio");
-    this.router.navigate(['/inicio']);
-    console.log("ya esta");
-    this.service.delete(this.persona.id).subscribe()
-    this.borrar.emit(this.persona.id)
-    console.log("persona borrada")
+    //nuevo
+    const dialogRef = this.dialog.open(VentanaBorrarComponent, {
+      height: '200px',
+      width: '300px',
+      data: ""
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.router.navigate(['/inicio']);
+        this.service.delete(this.persona.id).subscribe()
+        this.borrar.emit(this.persona.id)
+      }
+    });
   }
 }

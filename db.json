@@ -12,45 +12,6 @@
       "imagen_url": "",
       "termination_date": "2021-08-15",
       "id": 2
-    },
-    {
-      "user": "Alberto",
-      "password": "123434534543",
-      "surname": "Vicente Campos",
-      "email_empresa": "e@c.cos",
-      "email_personal": "e@g.com",
-      "ciudad": "4",
-      "actividad": true,
-      "fecha": "2021-08-21",
-      "imagen_url": "",
-      "termination_date": "2021-08-21",
-      "id": 1
-    },
-    {
-      "user": "Alberto",
-      "password": "123434534543",
-      "surname": "Vicente Campos",
-      "email_empresa": "e@c.cos",
-      "email_personal": "e@g.com",
-      "ciudad": "4",
-      "actividad": true,
-      "fecha": "2021-08-21",
-      "imagen_url": "",
-      "termination_date": "2021-08-21",
-      "id": 4
-    },
-    {
-      "user": "Alberto",
-      "password": "123434534543",
-      "surname": "Vicente Campos",
-      "email_empresa": "e@c.cos",
-      "email_personal": "e@g.com",
-      "ciudad": "4",
-      "actividad": true,
-      "fecha": "2021-08-21",
-      "imagen_url": "",
-      "termination_date": "2021-08-21",
-      "id": 8
     }
   ]
 }

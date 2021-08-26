@@ -69,6 +69,7 @@ import { VentanaDialogComponent } from './persona/infrastructure/ventana-dialog/
 import { ErrorComponent } from './persona/infrastructure/error/error.component';
 
 import { GlobalErrorHandlerService } from './persona/application/services/global-error-handler/global-error-handler.service';
+import { VentanaBorrarComponent } from './persona/infrastructure/ventana-borrar/ventana-borrar.component';
 
 
 const material = [
@@ -84,7 +85,8 @@ const material = [
     NavegacionComponent,
     LateralComponent,
     VentanaDialogComponent,
-    ErrorComponent
+    ErrorComponent,
+    VentanaBorrarComponent
   ],
   exports: [
     PersonaTarjetaComponent,
