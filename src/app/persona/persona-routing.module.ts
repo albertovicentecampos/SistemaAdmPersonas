@@ -11,14 +11,15 @@ import { PersonaTarjetaComponent } from './infrastructure/persona-tarjeta/person
 
 const routes: Routes = [
   {
-    path: "inicio",
-    component: ListadoComponent, 
-    children: [
-        {path: "editar", loadChildren: () => import('./persona.module').then(m => m.PersonaModule)},
-        {path: "crear", component: FormularioPersonasComponent},
-        {path: "error", component: ErrorComponent}
-    ] 
-  }
+    path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
+  { path: "editar", loadChildren: () => import('./persona.module').then(m => m.PersonaModule) },
+  { path: "crear", component: FormularioPersonasComponent },
+  { path: "error", component: ErrorComponent },
+  { path: "inicio", component: ListadoComponent }
+
 ];
 
 

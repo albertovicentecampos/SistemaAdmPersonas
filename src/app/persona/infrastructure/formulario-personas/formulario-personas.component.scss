@@ -27,6 +27,7 @@ h1 {
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15px;
   }
 
   .edicion{
@@ -44,4 +45,9 @@ h1 {
     justify-content: flex-start;
       //margin-left: 50px;
       align-items: flex-start;
+  }
+
+  .cancelar:hover {
+    background-color: #500000;
+    color: white;
   }

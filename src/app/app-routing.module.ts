@@ -39,8 +39,17 @@ import { PersonaModule } from './persona/persona.module';
   }
 ];
 
-// const routes: Routes = [ 
-//   {path: "inicio", loadChildren: () => import("./persona/persona-routing.module").then(m=> m.PersonaRoutingModule)}
+  // const routes: Routes = [ 
+  //  {
+  //    path: " ",
+  //    redirectTo: "/personas",
+  //    pathMatch: "full"
+  //   },
+
+//   {
+//    path: "personas", 
+//    loadChildren: () => import("./persona/persona-routing.module").then(m=> m.PersonaRoutingModule),
+//   }
 // ]
 
 
